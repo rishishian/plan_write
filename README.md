@@ -41,7 +41,7 @@
 
 一言以蔽之，我们想把self-attention加到RNN里。self-attention最早被大家熟悉应该是在transformer系列工作中。transformer系列工作完全抛弃了RNN的循环思路，而是采用MutiHeadAttention模块作为基石。我们使用多层RNN作为Encoder，并在RNN层与RNN层之间插入了MutiHeadAttention模块。
 
-<img src="img/self_attn.png" alt="self_attn" style="zoom:25%;" />
+<img src="img/self_attn.png" alt="self_attn" width="300" height="400" />
 
 #### Experiment
 
@@ -51,9 +51,9 @@
 
   - 两步的loss如下图所示
 
-    <img src="img/t2l.png" alt="283147ccb2d9cfc26e60fb93b815e1a" style="zoom: 25%;" />
+    <img src="img/t2l.png" alt="283147ccb2d9cfc26e60fb93b815e1a" width="300" height="400" />
 
-  - <img src="img\l2s.png" alt="74cef8d14c44ce809c64deef8b33556" style="zoom:25%;" />
+  - <img src="img\l2s.png" alt="74cef8d14c44ce809c64deef8b33556"  width="300" height="400" />
 
   - 可能是由于我们并没有像论文中一样添加了很多trick，所以我们复现的模型的bleu score的结果要比源码差一些
 
@@ -65,8 +65,9 @@
 - 加入Self-Attention模块
 
   - 我们惊奇地发现加入此模块后，训练过程中valid loss不再飘
-  - <img src="img/l2s_attn.png" alt="099077dff4c43b5ee6852782d2528b6" style="zoom:25%;" />
-  - 目前这部分正在decode。。。。预知结果如何，请等下次commit
+  - <img src="img/l2s_attn.png" alt="099077dff4c43b5ee6852782d2528b6"  width="300" height="400" />
+  - 但很遗憾，我们发现decode的结果其实很差，每个story-line几乎都decode出了同样的结果。所以也解释了valid loss不飘吧。
+  - 究其原因，应该是这个task本身的src很短，在encoder模块加很复杂的可学习模块其实更容易导致整个框架过拟合
 
 
 
