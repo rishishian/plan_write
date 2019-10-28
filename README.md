@@ -8,13 +8,13 @@
 
 ## Related Work
 
-本次作业本质上是文本生成的任务，序列到序列[^1]模型是文本生成领域比较常用的一个算法，也是课程提供的参考文献[^2]中使用的方法，采取了编码器-解码器的架构，用编码器编码输入，解码器则用来产生输出，两个模块之间采用注意力模块相连。
+本次作业本质上是文本生成的任务，序列到序列[1]模型是文本生成领域比较常用的一个算法，也是课程提供的参考文献[2]中使用的方法，采取了编码器-解码器的架构，用编码器编码输入，解码器则用来产生输出，两个模块之间采用注意力模块相连。
 
-参考文献[^2]中提出了两步式的故事生成方法，即先对给定的标题生成一个简短的storyline，再通过storyline生成具体的故事。文中提出了两种故事生成的模型，即静态生成模型和动态生成模型。前者先使用序列到序列模型根据标题生成完整的storyline，再用storyline生成故事；后者则是交替式地动态生成storyline和故事。在此基础上我们做了一些调研。
+参考文献[2]中提出了两步式的故事生成方法，即先对给定的标题生成一个简短的storyline，再通过storyline生成具体的故事。文中提出了两种故事生成的模型，即静态生成模型和动态生成模型。前者先使用序列到序列模型根据标题生成完整的storyline，再用storyline生成故事；后者则是交替式地动态生成storyline和故事。在此基础上我们做了一些调研。
 
- Ammanabrolu等人采用了一个级联的模型来完成给定故事开头续写故事的任务[^3]。他们使用了Martin等人提出的event抽象结构[^4]来表示句子，并将其进一步扩展。他们将故事生成的任务分成了生成event和生成故事两个步骤，与文献[^2]采用中间结构storyline的思路相似。Yang等人提出了根据若干个主题生成文章的方法[^5]。他们在decode生成文本的时候引入了外部知识，并且借用了seqGAN的训练方法增强模型表现。这些工作和本次作业一样，需要根据比较短的输入生成较长的文本。
+ Ammanabrolu等人采用了一个级联的模型来完成给定故事开头续写故事的任务[3]。他们使用了Martin等人提出的event抽象结构[4]来表示句子，并将其进一步扩展。他们将故事生成的任务分成了生成event和生成故事两个步骤，与文献[2]采用中间结构storyline的思路相似。Yang等人提出了根据若干个主题生成文章的方法[5]。他们在decode生成文本的时候引入了外部知识，并且借用了seqGAN的训练方法增强模型表现。这些工作和本次作业一样，需要根据比较短的输入生成较长的文本。
 
-本次作业采用的评测指标bleu值，全称bilingual evaluation understudy，由Papineni等人于2002年提出[^6]，是一种常用于机器翻译等领域的自动评价指标，现也多用于各种文本生成任务的评价。
+本次作业采用的评测指标bleu值，全称bilingual evaluation understudy，由Papineni等人于2002年提出[6]，是一种常用于机器翻译等领域的自动评价指标，现也多用于各种文本生成任务的评价。
 
 对于测试集中的每组数据，模型对于输入序列产生一个输出序列，这个输入序列对应一个或多个标准输出（因为机器翻译的任务并不是一对一的，一个句子可以有多种翻译方式，所以可以有多个标准输出）。其基本原则是希望机器翻译得到的译文与人工译文重合度尽可能高。具体评测时，会比较机器译文和参考译文之间的n-gram的重合度，即机器翻译中的n-gram在参考译文中的最大命中次数。n一般取1、2、3、4。但是这样会倾向于给较短的序列更高的分数，因此引入了长度惩罚因数BP。若机器译文长度小于参考译文，则令BP<1，会导致最终bleu评分降低。其余情况BP=1。最终计算公式可以表示为：
 $$
@@ -160,31 +160,31 @@ bleu评分综合权衡了序列间的n-gram重合度和长度等因素，是一�
 
 ## Reference
 
-[^ 1]: Sequence to Sequence Learning with Neural Networks, Ilya Sutskever et al., 2014
+[1]: Sequence to Sequence Learning with Neural Networks, Ilya Sutskever et al., 2014
 
 
 
-[^ 2]: Plan-And-Write: Towards Better Automatic Storytelling, Yao et al., 2019
+[2]: Plan-And-Write: Towards Better Automatic Storytelling, Yao et al., 2019
 
 
 
-[^ 3]: Story Realization: Expanding Plot Events into Sentences, Prithviraj Ammanabrolu et al., 2019
+[3]: Story Realization: Expanding Plot Events into Sentences, Prithviraj Ammanabrolu et al., 2019
 
 
 
-[^ 4]: Event Representations for Automated Story Generation with Deep Neural Nets, Lara J. Martin et al., 2018
+[4]: Event Representations for Automated Story Generation with Deep Neural Nets, Lara J. Martin et al., 2018
 
 
 
-[^ 5]: Enhancing Topic-to-Essay Generation with External Commonsense Knowledge, Pengcheng Yang et al., 2019
+[5]: Enhancing Topic-to-Essay Generation with External Commonsense Knowledge, Pengcheng Yang et al., 2019
 
 
 
-[^6]: BLEU: a method for automatic evaluation of machine translation, Kishore Papineni et al., 2002
+[6]: BLEU: a method for automatic evaluation of machine translation, Kishore Papineni et al., 2002
 
 
 
-[^ 7]: A Systematic Comparison of Smoothing Techniques for Sentence-Level BLEU , Boxing Chen et al., 2014
+[7]: A Systematic Comparison of Smoothing Techniques for Sentence-Level BLEU , Boxing Chen et al., 2014
 
 
 
