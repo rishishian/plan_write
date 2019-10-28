@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4720811c-2b33-4e93-a9a8-e5fcdc518d61" name="pnw_244" url="http://103.235.253.244">
+        <fileTransfer host="103.235.253.244" port="60022" rootFolder="/data1/lxx" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="60022" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="23f6ad35-3c83-4ef7-915d-7feb4b00c592" name="pnw_143" url="http://111.207.202.17">
+        <fileTransfer host="111.207.202.17" port="60022" rootFolder="/data3/lxx" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="60022" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
