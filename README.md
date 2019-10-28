@@ -158,7 +158,7 @@ bleu评分综合权衡了序列间的n-gram重合度和长度等因素，是一�
 
 
 
-
+## Reference
 
 [^1]: Sequence to Sequence Learning with Neural Networks, Ilya Sutskever et al., 2014
 
