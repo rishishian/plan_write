@@ -1,1 +1,1 @@
-CUDA_VISIBLE_DEVICES=2 python main.py --config Line2StoryTest --mode train
+CUDA_VISIBLE_DEVICES=2 python main.py --config Line2Story --mode train_generate

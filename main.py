@@ -177,8 +177,8 @@ if __name__ == '__main__':
     ENC_DROPOUT = CONFIG['enc_dropout']
     DEC_DROPOUT = CONFIG['dec_dropout']
     attn = Attention(ENC_HID_DIM, DEC_HID_DIM)
-    # enc = Encoder(INPUT_DIM, ENC_EMB_DIM, ENC_HID_DIM, DEC_HID_DIM, ENC_DROPOUT)
-    enc = Encoder_with_SelfAttn(INPUT_DIM, ENC_EMB_DIM, ENC_HID_DIM, DEC_HID_DIM, ENC_DROPOUT)
+    enc = Encoder(INPUT_DIM, ENC_EMB_DIM, ENC_HID_DIM, DEC_HID_DIM, ENC_DROPOUT)
+    # enc = Encoder_with_SelfAttn(INPUT_DIM, ENC_EMB_DIM, ENC_HID_DIM, DEC_HID_DIM, ENC_DROPOUT)
     dec = Decoder(OUTPUT_DIM, DEC_EMB_DIM, ENC_HID_DIM, DEC_HID_DIM, DEC_DROPOUT, attn)
     model = Seq2Seq(enc, dec, device).to(device)
     print(f'The model has {count_parameters(model)} trainable parameters')

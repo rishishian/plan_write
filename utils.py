@@ -90,7 +90,7 @@ def refine_result(raw_result_path):
     TESTSET_SIZE = 8159
     with open(refined_result_path, 'w') as f:
         for l in refined_lines[-TESTSET_SIZE:]:
-            f.write(l+'\n')
+            f.write(l + '\n')
     return refined_result_path
 
 

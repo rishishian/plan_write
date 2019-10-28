@@ -1,1 +1,1 @@
-CUDA_VISIBLE_DEVICES=1 python main.py --config Title2Line --mode generate
+CUDA_VISIBLE_DEVICES=1 python main.py --config Title2Line --mode train_generate

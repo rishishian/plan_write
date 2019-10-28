@@ -24,7 +24,7 @@ class Config:
         'dec_dropout': 0,
         'model_path': os.path.join(ModelRootPath, 'title2line.pt'),
         'result_path': os.path.join(ResultRootPath, 'title2line.txt'),
-        'teacher_force': 1.0,
+        'teacher_force': 0.5,
 
         # train
         'batch_size': 128,
@@ -36,7 +36,8 @@ class Config:
         'trainset': os.path.join(DataRootPath, 'train_line_story.tsv'),
         'validset': os.path.join(DataRootPath, 'valid_line_story.tsv'),
         # 'testset': os.path.join(DataRootPath, 'test_line_story.tsv'),
-        'testset': os.path.join(DataRootPath, 'test_gnr_line_STORY.tsv'),
+        # 'testset': os.path.join(DataRootPath, 'test_gnr_line_STORY.tsv'),
+        'testset': './result/title2line_fortest.tsv',
         'src_field': 'story_line',
         'trg_field': 'story',
         'min_freq': 25,
@@ -50,8 +51,8 @@ class Config:
         'enc_dropout': 0,
         'dec_dropout': 0,
         'model_path': os.path.join(ModelRootPath, 'line2story.pt'),
-        'result_path': os.path.join(ResultRootPath, 'line2story_wo_repeat.txt'),
-        'teacher_force': 1.0,
+        'result_path': os.path.join(ResultRootPath, 'line2story.txt'),
+        'teacher_force': 0.5,
 
         # train
         'batch_size': 128,
