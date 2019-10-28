@@ -1,4 +1,4 @@
-# plan_write
+# 大数据中的文本挖掘·作业1
 
 ## Introduction
 
@@ -153,6 +153,19 @@ bleu评分综合权衡了序列间的n-gram重合度和长度等因素，是一�
 ## TODO
 
 - 如果有同学发现有bug可以及时反馈，我们应该会维护此repo一两个星期吧
+
+
+
+
+
+
+[^1]: Sequence to Sequence Learning with Neural Networks, Ilya Sutskever et al., 2014
+[^2]: Plan-And-Write: Towards Better Automatic Storytelling, Yao et al., 2019
+[^3]: Story Realization: Expanding Plot Events into Sentences, Prithviraj Ammanabrolu et al., 2019
+[^4]: Event Representations for Automated Story Generation with Deep Neural Nets, Lara J. Martin et al., 2018
+[^5]: Enhancing Topic-to-Essay Generation with External Commonsense Knowledge, Pengcheng Yang et al., 2019
+[^6]: BLEU: a method for automatic evaluation of machine translation, Kishore Papineni et al., 2002
+[^7]: A Systematic Comparison of Smoothing Techniques for Sentence-Level BLEU , Boxing Chen et al., 2014
 
 
 
